@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/amthul/book-review-ci-cd.git'
+                git credentialsId: 'github-credentialstoken', url: 'https://github.com/amthul/book-review-ci-cd.git', branch: 'main'
             }
         }
         stage('Build Docker Image') {
